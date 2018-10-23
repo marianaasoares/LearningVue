@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt/br">
+<head>
+	<meta charset="utf-8">
+	<title>Aula 1 - Vuejs do jeito ninja! </title>
+</head>
+<body>
+	<div id="app">
+		<h1>{{titulo}}</h1>
+		<!-- <h1 v-if="true" > {{titulo}} </h1> só vai mostrar o título se o v-if for igual ao status dito no vue js. Caso ele seja false não irá aparecer no código quando inspecionar, diferentemente do v-show que mesmo que eu ponha false ele aparece no código, mas semelhante ao v-if caso seja falso, não imprimirá na tela -->
+		<!--<p v-if="texto">Lorem ipsum dolor sit amet, ea semper senserit gloriatur his, dicta alterum ponderum eam ea, sint minim est et. Eam intellegat adversarium eu, mei eu nisl summo prompta. Id nec iusto dolorum, eu posse vivendo pri. Eam et patrioque sadipscing, cum ex purto assentior, te soleat mentitum volutpat per. Eum ea paulo recteque persequeris, an sit everti inermis principes, mei ut fugit saperet oportere. Ne meliore gloriatur sit, eu mea nullam delicatissimi. Tempor habemus recteque mea ei, ne his aliquip delenit.
+		</p>
+		<div v-else> Não existe texto! </div>-->
+		<div v-if="usuario.id == 1">
+			Id: {{usuario.id}}, <br>
+			Nome: {{usuario.nome}}, <br>
+			Profissão: {{usuario.profissao}}
+		</div>
+		<div v-else> Nenhum usuário encontrado com o ID igual a 1 ! </div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+	<script>
+		var app = new Vue({
+			el: "#app", //elemento pai
+			//status: false, 
+			data: { //variáveis do vue
+				//texto: true, 
+				titulo: "Aula 01 - Vuejs do jeito ninja!",
+				usuario: {
+					id: 2,
+					nome: "Jon Snow",
+					profissao: "ator"
+				}
+
+			} 
+		});
+	</script>
+</body>
+</html>
